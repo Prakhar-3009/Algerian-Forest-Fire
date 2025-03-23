@@ -158,21 +158,24 @@
   <section class="section factors">
     <h2>Key Factors in Fire Prediction</h2>
     <div class="card-container">
-      <div class="card">
-        <!-- <img src="weather.jpg" alt="Weather Conditions" /> -->
+
+      <!-- Weather Conditions Card -->
+      <a href="{{ url_for('weather_fires') }}" class="card" target="_blank" rel="noopener noreferrer">
         <h3>Weather Conditions</h3>
-        <p>Temperature, humidity, wind speed, and rainfall impact fire risk.</p>
-      </div>
-      <div class="card">
-        <!-- <img src="fire-index.jpg" alt="Fire Indices" /> -->
+        <p>Temperature, humidity, wind speed, and rainfall impact fire risk. Learn more about how weather influences forest fires.</p>
+      </a>
+
+      <!-- Fire Indices Card -->
+      <a href="{{ url_for('fire_indices') }}" class="card" target="_blank" rel="noopener noreferrer">
         <h3>Fire Indices</h3>
-        <p>FFMC, DMC, and ISI are critical fire behavior metrics.</p>
-      </div>
-      <div class="card">
-        <!-- <img src="temp.jpg" alt="Regional Factors" /> -->
+        <p>FFMC, DMC, and ISI are critical fire behavior metrics. Discover how these indices help predict forest fires.</p>
+      </a>
+
+      <!-- Temperature Card -->
+      <a href="{{ url_for('temperature_impact') }}" class="card" target="_blank" rel="noopener noreferrer">
         <h3>Temperature</h3>
-        <p>Higher temperatures create drier conditions, increasing the likelihood of forest fires.</p>
-      </div>
+        <p>Higher temperatures create drier conditions, increasing the likelihood of forest fires. Read more about the effects of extreme heat.</p>
+      </a>
     </div>
     <div class="button-spacer">
       <a href="/predictdata" class="button">Try the Prediction Tool</a>
@@ -180,7 +183,7 @@
   </section>
 
   <footer>
-    <p>&copy; Made By Prakhar All rights reserved.</p>
+    <p>&copy; Made With Love By Prakhar All rights reserved.</p>
   </footer>
 </body>
 </html>

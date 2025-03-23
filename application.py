@@ -17,6 +17,18 @@ Sc = pickle.load(open("MODELS/Scaler.pkl","rb"))
 def index():
     return render_template("index.html")
 
+@app.route('/weather-fires')
+def weather_fires():
+    return render_template('weather-fires.html')
+
+@app.route('/fireindices')
+def fire_indices():
+    return render_template('fireindices.html')
+
+@app.route('/temperature-impact')
+def temperature_impact():
+    return render_template('temperature-impact.html')
+
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_data():
     if request.method=='POST':
