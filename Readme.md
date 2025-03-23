@@ -57,7 +57,7 @@ The final model was selected based on evaluation metrics like **Mean Squared Err
 
 ## Screenshots
 - This is the Index page of the form
-![alt text](<Screenshot 2025-03-23 061108-1.png>)
+![alt text](<Screenshot 2025-03-23 061108.png>)
 ![alt text](image-2.png)
 
 - This is how the form looks like 
