@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FWI Prediction Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-image: url('static/images/res.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(15, 15, 14);
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .result-container {
+            max-width: 600px;
+            padding: 30px;
+            border: 3px solid #161616;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .fwi-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        a button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        a button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            width: 100%;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-container">
+            <h2>Fire Weather Index (FWI) Prediction Result</h2>
+            <h3>FWI Prediction: {{results}}</h3>
+            <div class="fwi-result">
+                {% if results <= 4.9 %}
+                    <img src="static/images/low.png" alt="Low Risk" class="fwi-image" />
+                    Low (0-4.9): Low risk, fires are unlikely to ignite or spread significantly.
+                {% elif results <= 14.9 %}
+                    <img src="static/images/moderate.png" alt="Moderate Risk" class="fwi-image" />
+                    Moderate (5-14.9): Fires may start easily but are generally controllable.
+                {% elif results <= 49.9 %}
+                    <img src="static/images/high.png" alt="High Risk" class="fwi-image" />
+                    High (15-49.9): Fires can start easily, spread quickly, and may be difficult to control sometimes lethal.
+                {% else %}
+                    <img src="static/images/extreme.png" alt="Extreme Risk" class="fwi-image" />
+                    Extreme (50+): Fires will start readily, spread uncontrollably, and present significant danger to life and property.
+                {% endif %}
+            </div>
+            <a href="/">
+                <button>Go Back</button>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Made By Prakhar All rights reserved.</p>
+    </footer>
+</body>
+</html>
